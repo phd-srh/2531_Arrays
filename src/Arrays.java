@@ -43,12 +43,39 @@ public class Arrays {
 
         // Aufgabe 2
         // Eine Methode zur hübschen Ausgabe eines Arrays
-        System.out.println("zahlenreihe: " + ausgabeArray(zahlenreihe) );
+        System.out.print("zahlenreihe: ");
+        ausgabeArray(zahlenreihe);
+
+        int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 12 };
+        System.out.print("datenreihe: ");
+        ausgabeArray(datenreihe);
+        System.out.println("Der größte Wert lautet: " + maximalerWertImArray(datenreihe));
+        System.out.println("Der kleinste Wert lautet: " + minimalerWertImArray(datenreihe));
+
+        int suchWert = 13;
+        System.out.println("Der Wert " + suchWert + " befindet sich im Array? " +
+                findeWertImArray(suchWert));
     }
 
-    private static String ausgabeArray(int[] array) {
-        // TODO
-        // "[1, 2, 3, 4, ..., 100]"
-        return "";
+    private static boolean findeWertImArray(int wert) {
+        return false;
+    }
+
+    private static int minimalerWertImArray(int[] array) {
+        return 0;
+    }
+
+    private static int maximalerWertImArray(int[] array) {
+        return 0;
+    }
+
+
+    private static void ausgabeArray(int[] array) {
+        System.out.print("[");
+        for (int i=0; i < array.length; i++) {
+            if (i > 0) System.out.print(", ");
+            System.out.print(array[i]);
+        }
+        System.out.println("]");
     }
 }
