@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Arrays {
     public static void main(String[] args) {
 
@@ -21,6 +23,19 @@ public class Arrays {
 
 //        tagesSätze[365] = 17;
         // dieses Element gibt es nicht, es wäre die Nummer 366
+
+        // Spezialvariable (Property - Eigenschaft)
+        System.out.println("Wie groß ist das Array tagesSätze: " + tagesSätze.length);
+        System.out.println("Wie groß ist das Array doubleArray: " + doubleArray.length);
+
+        // GANZ WICHTIG:
+        // Die Größe des Arrays, d.h. wieviel Elemente es umfassen kann, lässt sich
+        // NICHT mehr ändern! => statisches Array
+//        doubleArray.length = doubleArray.length + 1;
+//        doubleArray[5] = -3.4;
+
+        // Aufgabe 1
+        // Ein int-Array erstellen und mit den Werten von 1 bis 100 initialisieren.
 
     }
 }
