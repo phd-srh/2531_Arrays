@@ -36,6 +36,19 @@ public class Arrays {
 
         // Aufgabe 1
         // Ein int-Array erstellen und mit den Werten von 1 bis 100 initialisieren.
+        int[] zahlenreihe = new int[ 100 ];
+        for (int i=0; i < zahlenreihe.length; i++) {
+            zahlenreihe[i] = i + 1;
+        }
 
+        // Aufgabe 2
+        // Eine Methode zur hübschen Ausgabe eines Arrays
+        System.out.println("zahlenreihe: " + ausgabeArray(zahlenreihe) );
+    }
+
+    private static String ausgabeArray(int[] array) {
+        // TODO
+        // "[1, 2, 3, 4, ..., 100]"
+        return "";
     }
 }
