@@ -46,7 +46,7 @@ public class Arrays {
         System.out.print("zahlenreihe: ");
         ausgabeArray(zahlenreihe);
 
-        int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 1, 12 };
+        int[] datenreihe = { 1, 17, 3, 29, 22, 5, 11, 9, 13, 7, 12 };
         System.out.print("datenreihe: ");
         ausgabeArray(datenreihe);
         System.out.println("Der größte Wert lautet: " + maximalerWertImArray(datenreihe));
@@ -63,6 +63,25 @@ public class Arrays {
 
         int[] datenreiheOhneWert = entferneZahlAusArray(datenreihe, 21);
         ausgabeArray(datenreiheOhneWert);
+
+        System.out.println("Die Datenreihe ist " +
+                (istArraySortiert(datenreihe) ? "" : "nicht ")
+                + "sortiert");
+
+        int[] sortierteDatenreihe = sortiereArray(datenreihe);
+        ausgabeArray(sortierteDatenreihe);
+    }
+
+    public static int[] sortiereArray(int[] array) {
+        int[] sortiertesArray = new int[ array.length ];
+        return sortiertesArray;
+    }
+
+    private static boolean istArraySortiert(int[] array) {
+        for (int i = 0; i < array.length-1; i++) {
+            if (array[i] > array[i+1]) return false;
+        }
+        return true;
     }
 
     public static int[] entferneZahlAusArray(int[] array, int zahl) {
