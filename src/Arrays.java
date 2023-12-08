@@ -74,9 +74,13 @@ public class Arrays {
     }
 
     private static int maximalerWertImArray(int[] array) {
-        return 0;
+        int aktuellerMaximalerWert = Integer.MIN_VALUE;
+        for (int element : array) {
+            if (aktuellerMaximalerWert < element)
+                aktuellerMaximalerWert = element;
+        }
+        return aktuellerMaximalerWert;
     }
-
 
     private static void ausgabeArray(int[] array) {
         System.out.print("[");
