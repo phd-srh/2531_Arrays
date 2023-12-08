@@ -55,7 +55,26 @@ public class Arrays {
         int suchWert = 31;
         System.out.println("Der Wert " + suchWert + " befindet sich im Array? " +
                 findeWertImArray(datenreihe, suchWert));
+
+        int nochEineDatenreihe[] = { 1, 15, 29, 47, 55 };
+        System.out.println("In beiden Arrays sind " +
+                zähleGleicheElemente(datenreihe, nochEineDatenreihe) +
+                " Elemente gleich");
+
+        int[] datenreiheOhne11 = entferneZahlAusArray(datenreihe, 11);
+        ausgabeArray(datenreiheOhne11);
     }
+
+    public static int[] entferneZahlAusArray(int[] array, int zahl) {
+        // TODO
+        return array;
+    }
+
+    public static int zähleGleicheElemente(int[] a, int[] b) {
+        // TODO
+        return 0;
+    }
+
 
     private static boolean findeWertImArray(int[] array, int wert) {
         for (int element : array) {
