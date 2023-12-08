@@ -72,8 +72,14 @@ public class Arrays {
         ausgabeArray(sortierteDatenreihe);
     }
 
+    // Selection Sort (Sortieren durch Auswählen)
     public static int[] sortiereArray(int[] array) {
         int[] sortiertesArray = new int[ array.length ];
+        for (int i = 0; i < sortiertesArray.length; i++) {
+            int kleinsterWert = minimalerWertImArray(array);
+            sortiertesArray[i] = kleinsterWert;
+            array = entferneZahlAusArray(array, kleinsterWert);
+        }
         return sortiertesArray;
     }
 
@@ -113,7 +119,6 @@ public class Arrays {
         }
         return anzahlGleicherElemente;
     }
-
 
     private static boolean findeWertImArray(int[] array, int wert) {
         for (int element : array) {
