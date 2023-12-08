@@ -56,23 +56,43 @@ public class Arrays {
         System.out.println("Der Wert " + suchWert + " befindet sich im Array? " +
                 findeWertImArray(datenreihe, suchWert));
 
-        int nochEineDatenreihe[] = { 1, 15, 29, 47, 55 };
+        int[] nochEineDatenreihe = { 1, 15, 29, 47, 55 };
         System.out.println("In beiden Arrays sind " +
                 zähleGleicheElemente(datenreihe, nochEineDatenreihe) +
                 " Elemente gleich");
 
-        int[] datenreiheOhne11 = entferneZahlAusArray(datenreihe, 11);
-        ausgabeArray(datenreiheOhne11);
+        int[] datenreiheOhneWert = entferneZahlAusArray(datenreihe, 21);
+        ausgabeArray(datenreiheOhneWert);
     }
 
     public static int[] entferneZahlAusArray(int[] array, int zahl) {
-        // TODO
-        return array;
+        int längeDesNeuenArrays = array.length;
+        if ( findeWertImArray(array, zahl) )
+            längeDesNeuenArrays--;
+
+        int[] neuesArray = new int[ längeDesNeuenArrays ];
+        int neuerIndex = 0;
+        for (int element : array) {
+            if (element != zahl) {
+                neuesArray[neuerIndex] = element;
+                neuerIndex++;
+            }
+        }
+        return neuesArray;
     }
 
     public static int zähleGleicheElemente(int[] a, int[] b) {
-        // TODO
-        return 0;
+        int anzahlGleicherElemente = 0;
+        for (int element : a) {
+            if ( findeWertImArray(b, element) )
+                anzahlGleicherElemente++;
+//            -- Alternative, wenn die Methode findeWertImArray nicht existiert
+//            for (int dasAndereElement : b) {
+//                if (element == dasAndereElement)
+//                    anzahlGleicherElemente++;
+//            }
+        }
+        return anzahlGleicherElemente;
     }
 
 
