@@ -46,23 +46,31 @@ public class Arrays {
         System.out.print("zahlenreihe: ");
         ausgabeArray(zahlenreihe);
 
-        int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 12 };
+        int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 1, 12 };
         System.out.print("datenreihe: ");
         ausgabeArray(datenreihe);
         System.out.println("Der größte Wert lautet: " + maximalerWertImArray(datenreihe));
         System.out.println("Der kleinste Wert lautet: " + minimalerWertImArray(datenreihe));
 
-        int suchWert = 13;
+        int suchWert = 31;
         System.out.println("Der Wert " + suchWert + " befindet sich im Array? " +
-                findeWertImArray(suchWert));
+                findeWertImArray(datenreihe, suchWert));
     }
 
-    private static boolean findeWertImArray(int wert) {
+    private static boolean findeWertImArray(int[] array, int wert) {
+        for (int element : array) {
+            if (element == wert) return true;
+        }
         return false;
     }
 
     private static int minimalerWertImArray(int[] array) {
-        return 0;
+        int aktuellerMinmalerWert = Integer.MAX_VALUE;
+        for (int element : array) {
+            if (aktuellerMinmalerWert > element)
+                aktuellerMinmalerWert = element;
+        }
+        return aktuellerMinmalerWert;
     }
 
     private static int maximalerWertImArray(int[] array) {
